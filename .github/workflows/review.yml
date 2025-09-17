@@ -1,0 +1,35 @@
+name: Auto Assign Fixed Reviewer
+
+on:
+  pull_request:
+    types: [opened, ready_for_review, reopened, synchronize]
+
+jobs:
+  assign-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set reviewer based on author
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const author = context.payload.pull_request.user.login;
+            let reviewer = null;
+
+            if (author === "UserA") {
+              reviewer = "UserB";
+            } else if (author === "UserB") {
+              reviewer = "UserA";
+            }
+
+            if (reviewer) {
+              await github.rest.pulls.requestReviewers({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.payload.pull_request.number,
+                reviewers: [reviewer],
+              });
+              core.info(`Assigned ${reviewer} as reviewer`);
+            } else {
+              core.info("No matching reviewer for this author");
+            }
