@@ -1,0 +1,21 @@
+name: Auto Create PR
+
+on:
+  push:
+    branches-ignore:
+      - main   # pas de PR si push direct sur main
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: ${{ github.ref_name }}
+          destination_branch: main
+          pr_title: "Auto PR from ${{ github.ref_name }}"
+          pr_body: "Cette PR a été créée automatiquement."
