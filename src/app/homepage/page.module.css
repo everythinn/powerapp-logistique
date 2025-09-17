@@ -1,0 +1,106 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+}
+
+.navCubes {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 5%;
+    min-width: 280px;
+    min-height: 350px;
+}
+
+.navTop {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-height: 200px;
+}
+
+.navTop p,
+.navCubes > p {
+    display: flex;
+    background-color: #b7acc9;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    flex: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navTop p:hover,
+.navCubes > p:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.sideBar {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2%;
+    min-width: 250px;
+}
+
+.sideBar button {
+    background-color: #6a2ca3;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sideBar button:hover {
+    background-color: #572183;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.sideBar img {
+    width: 100%;
+    max-width: 250px;
+    min-height: 350px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 1000px) {
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navTop {
+        flex-direction: column;
+    }
+
+    .navTop p {
+        width: 100%;
+    }
+
+    .sideBar img {
+        display: none;
+    }
+}
