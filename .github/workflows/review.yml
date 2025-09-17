@@ -17,6 +17,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            console.log('=== DEBUG INFO ===');
+            console.log('PR Author:', context.payload.pull_request.user.login);
+            console.log('Repository:', context.repo.owner + '/' + context.repo.repo);
+            console.log('PR Number:', context.payload.pull_request.number);
+            
             const author = context.payload.pull_request.user.login;
             let reviewer = null;
 
@@ -24,16 +29,28 @@ jobs:
               reviewer = "everythinn";
             } else if (author === "everythinn") {
               reviewer = "morepudding";
+            } else {
+              // Si l'auteur n'est ni morepudding ni everythinn, assigner everythinn par défaut
+              console.log(`Author "${author}" not in predefined list, assigning default reviewer`);
+              reviewer = "everythinn";
             }
 
+            console.log('Selected reviewer:', reviewer);
+
             if (reviewer) {
-              await github.rest.pulls.requestReviewers({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.payload.pull_request.number,
-                reviewers: [reviewer],
-              });
-              core.info(`Assigned ${reviewer} as reviewer`);
+              try {
+                await github.rest.pulls.requestReviewers({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: context.payload.pull_request.number,
+                  reviewers: [reviewer],
+                });
+                console.log(`✅ Successfully assigned ${reviewer} as reviewer`);
+              } catch (error) {
+                console.error('❌ Error assigning reviewer:', error.message);
+                console.error('Error details:', error);
+                throw error;
+              }
             } else {
-              core.info("No matching reviewer for this author");
+              console.log("ℹ️ No matching reviewer for author:", author);
             }
