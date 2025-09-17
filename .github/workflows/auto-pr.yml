@@ -5,6 +5,10 @@ on:
     branches-ignore:
       - main   # pas de PR si push direct sur main
 
+permissions:
+  pull-requests: write
+  contents: read
+
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
