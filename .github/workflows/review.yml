@@ -16,10 +16,10 @@ jobs:
             const author = context.payload.pull_request.user.login;
             let reviewer = null;
 
-            if (author === "UserA") {
-              reviewer = "UserB";
-            } else if (author === "UserB") {
-              reviewer = "UserA";
+            if (author === "morepudding") {
+              reviewer = "everythinn";
+            } else if (author === "everythinn") {
+              reviewer = "morepudding";
             }
 
             if (reviewer) {
