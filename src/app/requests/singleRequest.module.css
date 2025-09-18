@@ -21,3 +21,12 @@
 .step {
     color: white;
 }
+
+.link {
+    background-color: #6a2ca3;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}

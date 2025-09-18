@@ -1,8 +1,10 @@
 'use client';
+import Link from 'next/link';
 import { useLang } from '../context/langContext';
 import style from './singleRequest.module.css';
 
 type SingleRequestProps = {
+    slug: string;
     number: string | number;
     creator: string;
     manager: string;
@@ -13,6 +15,7 @@ type SingleRequestProps = {
 };
 
 export default function SingleRequest({
+    slug,
     number,
     creator,
     manager,
@@ -38,6 +41,7 @@ export default function SingleRequest({
                         <p>Société émettrice : {issuingCompany}</p>
                         <p>Société destinataire : {receivingCompany}</p>
                     </div>
+                    <Link href={`/requests/${slug}`} className={style.link}>More details</Link>
                 </>
             ) : (
                 <>

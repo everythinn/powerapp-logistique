@@ -6,6 +6,7 @@ export default function RequestGrid(){
 
     const requests = [
         {
+            slug: 'WFL-6-578',
             number: 'WFL-6-578',
             creator: 'Valene LOPEZ',
             manager: 'Simon THOMAS',
@@ -15,6 +16,7 @@ export default function RequestGrid(){
             receivingCompany: 'SPBI'
         },
         {
+            slug: 'WFL-6-578',
             number: 'WFL-6-578',
             creator: 'Valene LOPEZ',
             manager: 'Simon THOMAS',
@@ -24,6 +26,7 @@ export default function RequestGrid(){
             receivingCompany: 'SPBI'
         },
         {
+            slug: 'WFL-6-578',
             number: 'WFL-6-578',
             creator: 'Valene LOPEZ',
             manager: 'Simon THOMAS',
@@ -33,6 +36,7 @@ export default function RequestGrid(){
             receivingCompany: 'SPBI'
         },
         {
+            slug: 'WFL-6-578',
             number: 'WFL-6-578',
             creator: 'Valene LOPEZ',
             manager: 'Simon THOMAS',
@@ -42,6 +46,7 @@ export default function RequestGrid(){
             receivingCompany: 'SPBI'
         },
         {
+            slug: 'WFL-6-578',
             number: 'WFL-6-578',
             creator: 'Valene LOPEZ',
             manager: 'Simon THOMAS',
@@ -51,6 +56,7 @@ export default function RequestGrid(){
             receivingCompany: 'SPBI'
         },
         {
+            slug: 'WFL-6-578',
             number: 'WFL-6-578',
             creator: 'Valene LOPEZ',
             manager: 'Simon THOMAS',
@@ -69,6 +75,7 @@ export default function RequestGrid(){
                 {requests.map((request, idx) => (
                     <li key={idx}>
                         <SingleRequest
+                            slug={request.slug}
                             number={request.number}
                             creator={request.creator}
                             manager={request.manager}
