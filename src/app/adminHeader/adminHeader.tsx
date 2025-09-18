@@ -1,8 +1,8 @@
-"use client";
+'use client';
 import { useLang } from "../context/langContext";
-import style from "./header.module.css";
+import style from "./adminHeader.module.css";
 
-export default function Header() {
+export default function AdminHeader() {
   const {lang, setToEn, setToFr} = useLang();
 
   return (
@@ -21,16 +21,16 @@ export default function Header() {
           EN
         </button>
       </div>
-      {lang==="FR" ? (
-        <div>
-          <h1>LOGISTIQUE</h1>
+      {lang === "FR" ? (
+        <>
+          <h1>LOGISTIQUE - ADMINISTRATION</h1>
           <p>Bienvenue utilisateur</p>
-        </div>
+        </>
       ) : (
-        <div>
-          <h1>LOGISTIC</h1>
+        <>
+          <h1>LOGISTIC - ADMINISTRATION</h1>
           <p>Welcome username</p>
-        </div>
+        </>
       )}
     </div>
   );
