@@ -5,18 +5,25 @@ import style from "./adminHeader.module.css";
 export default function AdminHeader() {
   const {lang, setToEn, setToFr} = useLang();
 
+
+  function changeLang(){
+    if (lang==="FR"){
+      setToEn()
+    } else setToFr()
+  }
+
   return (
     <div className={style.header}>
       <div className={style.lang_slider}>
         <button
           className={`${style.langBtn} ${lang === "FR" ? style.active : ""}`}
-          onClick={setToFr}
+          onClick={changeLang}
         >
           FR
         </button>
         <button
           className={`${style.langBtn} ${lang === "EN" ? style.active : ""}`}
-          onClick={setToEn}
+          onClick={changeLang}
         >
           EN
         </button>
