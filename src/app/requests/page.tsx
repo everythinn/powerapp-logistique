@@ -1,5 +1,6 @@
 import SingleRequest from './singleRequest';
-import style from './requestGrid.module.css';
+import style from './page.module.css';
+import Header from '../header/header';
 
 export default function RequestGrid(){
 
@@ -62,20 +63,23 @@ export default function RequestGrid(){
     ]
 
     return (
-        <ul className={style.requests}>
-            {requests.map((request, idx) => (
-                <li key={idx}>
-                    <SingleRequest
-                        number={request.number}
-                        creator={request.creator}
-                        manager={request.manager}
-                        assignedTo={request.assignedTo}
-                        step={request.step}
-                        issuingCompany={request.issuingCompany}
-                        receivingCompany={request.receivingCompany}
-                    />
-                </li>
-            ))}
-        </ul>
+        <>
+            <Header />
+            <ul className={style.requests}>
+                {requests.map((request, idx) => (
+                    <li key={idx}>
+                        <SingleRequest
+                            number={request.number}
+                            creator={request.creator}
+                            manager={request.manager}
+                            assignedTo={request.assignedTo}
+                            step={request.step}
+                            issuingCompany={request.issuingCompany}
+                            receivingCompany={request.receivingCompany}
+                        />
+                    </li>
+                ))}
+            </ul>
+        </>
     )
 }

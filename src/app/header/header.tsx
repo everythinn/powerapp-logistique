@@ -1,9 +1,11 @@
-"use client";
+'use client';
+import Link from "next/link";
 import { useLang } from "../context/langContext";
 import style from "./header.module.css";
 
-export default function Header() {
+export default function AdminHeader() {
   const {lang, setToEn, setToFr} = useLang();
+
 
   function changeLang(){
     if (lang==="FR"){
@@ -27,16 +29,16 @@ export default function Header() {
           EN
         </button>
       </div>
-      {lang==="FR" ? (
-        <div>
-          <h1>LOGISTIQUE</h1>
+      {lang === "FR" ? (
+        <>
+          <Link href='./' className={style.title}>LOGISTIQUE</Link>
           <p>Bienvenue utilisateur</p>
-        </div>
+        </>
       ) : (
-        <div>
-          <h1>LOGISTIC</h1>
+        <>
+          <Link href='./' className={style.title}>LOGISTIC</Link>
           <p>Welcome username</p>
-        </div>
+        </>
       )}
     </div>
   );
