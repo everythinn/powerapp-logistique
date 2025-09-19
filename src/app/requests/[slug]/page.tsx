@@ -12,32 +12,30 @@ export default function Request(){
             <Header />
             <h1 className={style.title}>WFL-6-578</h1>
             {context.lang === "FR" ? (
-                <>
-                    <div className={style.container}>
-                        <div className={style.area}>
-                            <label htmlFor='creator' className={style.label}>Créateur :</label>
-                            <p id='creator' className={style.info}>Robert MARKIEWICZ</p>
-                            <label htmlFor='manager' className={style.label}>Gestionnaire :</label>
-                            <p id='manager' className={style.info}>Elizabete FAGUNDES DOS SANTOS</p>
-                            <label htmlFor='orderingParty' className={style.label}>Donneur d'ordres :</label>
-                            <p id='orderingParty' className={style.info}>Elizabete FAGUNDES DOS SANTOS</p>
-                        </div>
-                        <div className={style.area}>
-                            <label htmlFor='receptionDate' className={style.label}>Date du contrôle de réception :</label>
-                            <p id='receptionDate' className={style.info}>15/09/2025</p>
-                            <label htmlFor='arrivalDate' className={style.label}>Date d'arrivée à cette étape :</label>
-                            <p id='arrivalDate' className={style.info}>16/09/2025</p>
-                            <label htmlFor='transportation' className={style.label}>Ref transport # :</label>
-                            <p id='transportation' className={style.info}>LHOS-SHK-R2531B</p>
-                        </div>
-                        <div className={style.area}>
-                            <label htmlFor='issuing' className={style.label}>Société émettrice :</label>
-                            <p id='issuing' className={style.info}>SPBI</p>
-                            <label htmlFor='receiving' className={style.label}>Société destinataire :</label>
-                            <p id='receiving' className={style.info}>SPBI</p>
-                        </div>
+                <div className={style.container}>
+                    <div className={style.area}>
+                        <label htmlFor='creator' className={style.label}>Créateur : </label>
+                        <p id='creator' className={style.info}>Robert MARKIEWICZ</p>
+                        <label htmlFor='manager' className={style.label}>Gestionnaire :</label>
+                        <p id='manager' className={style.info}>Elizabete FAGUNDES DOS SANTOS</p>
+                        <label htmlFor='orderingParty' className={style.label}>Donneur d'ordres :</label>
+                        <p id='orderingParty' className={style.info}>Elizabete FAGUNDES DOS SANTOS</p>
                     </div>
-                </>
+                    <div className={style.area}>
+                        <label htmlFor='receptionDate' className={style.label}>Date du contrôle de réception :</label>
+                        <p id='receptionDate' className={style.info}>15/09/2025</p>
+                        <label htmlFor='arrivalDate' className={style.label}>Date d'arrivée à cette étape :</label>
+                        <p id='arrivalDate' className={style.info}>16/09/2025</p>
+                        <label htmlFor='transportation' className={style.label}>Ref transport # :</label>
+                        <p id='transportation' className={style.info}>LHOS-SHK-R2531B</p>
+                    </div>
+                    <div className={style.area}>
+                        <label htmlFor='issuing' className={style.label}>Société émettrice :</label>
+                        <p id='issuing' className={style.info}>SPBI</p>
+                        <label htmlFor='receiving' className={style.label}>Société destinataire :</label>
+                        <p id='receiving' className={style.info}>SPBI</p>
+                    </div>
+                </div>
             ) : (
                 <>
                     <div className={style.container}>
