@@ -24,8 +24,7 @@
     min-height: 200px;
 }
 
-.navTop p,
-.navCubes > p {
+.link {
     display: flex;
     background-color: #b7acc9;
     color: black;
@@ -39,8 +38,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.navTop p:hover,
-.navCubes > p:hover {
+.link:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
@@ -96,7 +94,7 @@
         flex-direction: column;
     }
 
-    .navTop p {
+    .link {
         width: 100%;
     }
 

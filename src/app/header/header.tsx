@@ -1,36 +1,44 @@
-"use client";
+'use client';
+import Link from "next/link";
 import { useLang } from "../context/langContext";
 import style from "./header.module.css";
 
-export default function Header() {
+export default function AdminHeader() {
   const {lang, setToEn, setToFr} = useLang();
+
+
+  function changeLang(){
+    if (lang==="FR"){
+      setToEn()
+    } else setToFr()
+  }
 
   return (
     <div className={style.header}>
       <div className={style.lang_slider}>
         <button
           className={`${style.langBtn} ${lang === "FR" ? style.active : ""}`}
-          onClick={setToFr}
+          onClick={changeLang}
         >
           FR
         </button>
         <button
           className={`${style.langBtn} ${lang === "EN" ? style.active : ""}`}
-          onClick={setToEn}
+          onClick={changeLang}
         >
           EN
         </button>
       </div>
-      {lang==="FR" ? (
-        <div>
-          <h1>LOGISTIQUE</h1>
-          <p>Bienvenue utilisateur</p>
-        </div>
+      {lang === "FR" ? (
+        <>
+          <Link href='./' className={style.title}>LOGISTIQUE</Link>
+          <Link href='./admin'>Bienvenue utilisateur</Link>
+        </>
       ) : (
-        <div>
-          <h1>LOGISTIC</h1>
-          <p>Welcome username</p>
-        </div>
+        <>
+          <Link href='./' className={style.title}>LOGISTIC</Link>
+          <Link href='./admin'>Welcome username</Link>
+        </>
       )}
     </div>
   );

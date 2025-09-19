@@ -1,7 +1,8 @@
 'use client';
 import { useLang } from '../context/langContext';
-import style from './page.module.css';
+import Link from 'next/link';
 import Image from '../../../public/homepage_boat.jpg';
+import style from './page.module.css';
 
 export default function Homepage() {
   const context = useLang();
@@ -12,10 +13,10 @@ export default function Homepage() {
         <>
           <div className={style.navCubes}>
             <div className={style.navTop}>
-              <p>Mes demandes</p>
-              <p>Mes assignations</p>
+              <Link href='./requests' className={style.link}>Mes demandes</Link>
+              <p className={style.link}>Mes assignations</p>
             </div>
-            <p>Toutes les demandes</p>
+            <p className={style.link}>Toutes les demandes</p>
           </div>
           <div className={style.sideBar}>
             <button>Nouvelle demande</button>
@@ -27,10 +28,10 @@ export default function Homepage() {
         <>
           <div className={style.navCubes}>
             <div className={style.navTop}>
-              <p>My requests</p>
-              <p>My assignments</p>
+              <Link href='./requests' className={style.link}>My requests</Link>
+              <p className={style.link}>My assignments</p>
             </div>
-            <p>All requests</p>
+            <p className={style.link}>All requests</p>
           </div>
           <div className={style.sideBar}>
             <button>New request</button>
