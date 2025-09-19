@@ -1,7 +1,7 @@
 import Header from "./header/header";
 import Homepage from "./homepage/page";
 import AdminHeader from "./adminHeader/adminHeader";
-import AdminBoard from "./adminBoard/page";
+import AdminBoard from "./admin/page";
 import SingleRequest from "./requests/singleRequest";
 import RequestGrid from "./requests/page";
 

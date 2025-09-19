@@ -1,5 +1,6 @@
 'use client';
 import { useLang } from "../context/langContext";
+import Link from "next/link";
 import style from "./adminHeader.module.css";
 
 export default function AdminHeader() {
@@ -31,12 +32,12 @@ export default function AdminHeader() {
       {lang === "FR" ? (
         <>
           <h1>LOGISTIQUE - ADMINISTRATION</h1>
-          <p>Bienvenue utilisateur</p>
+          <Link href='../'>Bienvenue utilisateur</Link>
         </>
       ) : (
         <>
           <h1>LOGISTIC - ADMINISTRATION</h1>
-          <p>Welcome username</p>
+          <Link href='../'>Welcome username</Link>
         </>
       )}
     </div>
