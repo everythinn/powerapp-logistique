@@ -17,14 +17,14 @@ export default function AdminBoard(){
                         <p className={style.link}>Demandes</p>
                         <Link href='./admin/companies' className={style.link}>Sociétés</Link>
                         <Link href='./admin/users' className={style.link}>Utilisateurs</Link>
-                        <p className={style.link}>Types de litiges</p>
+                        <Link href='./admin/issueCodes' className={style.link}>Types de litiges</Link>
                     </div>
                 ) : (
                     <div className={style.navCubes}>
                         <p className={style.link}>Requests</p>
                         <Link href='./admin/companies' className={style.link}>Companies</Link>
                         <Link href='./admin/users' className={style.link}>Users</Link>
-                        <p className={style.link}>Issue codes</p>
+                        <Link href='./admin/issueCodes' className={style.link}>Issue codes</Link>
                     </div>
                 )}
                 <div className={style.sideBar}>

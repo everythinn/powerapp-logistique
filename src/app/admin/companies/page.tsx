@@ -25,7 +25,7 @@ export default function CompaniesList(){
     return (
         <>
             <AdminHeader />
-            <ul className={style.requests}>
+            <ul className={style.companies}>
                 {companies.map((user, idx) => (
                     <li key={idx}>
                         <CompanyCard
