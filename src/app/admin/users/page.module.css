@@ -1,0 +1,25 @@
+.triggerContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+.link {
+    background-color: #E3E0EC;
+    color: black;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+    border-radius: 5px;
+    padding: 10px
+}
+
+.link:hover {
+    background-color: #54429E ;
+    color:white;
+}

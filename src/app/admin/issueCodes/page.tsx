@@ -3,6 +3,7 @@ import { useLang } from '@/app/context/langContext';
 import IssueCodeCard from './issueCodeCard';
 import AdminHeader from '@/app/adminHeader/adminHeader';
 import style from './page.module.css';
+import AddIssueCodePopup from '@/app/add/issueCode/addIssueCodePopup';
 
 export default function IssueCodeList(){
     const context = useLang();
@@ -25,6 +26,7 @@ export default function IssueCodeList(){
     return (
         <>
             <AdminHeader />
+            <AddIssueCodePopup />
             <ul className={style.codes}>
                 {codes.map((code, idx) => (
                     <li key={idx}>

@@ -3,6 +3,7 @@ import { useLang } from '@/app/context/langContext';
 import CompanyCard from './companyCard';
 import AdminHeader from '@/app/adminHeader/adminHeader';
 import style from './page.module.css';
+import AddCompanyPopup from '@/app/add/companies/addCompanyPopup';
 
 export default function CompaniesList(){
     const context = useLang();
@@ -25,12 +26,13 @@ export default function CompaniesList(){
     return (
         <>
             <AdminHeader />
+            <AddCompanyPopup />
             <ul className={style.companies}>
-                {companies.map((user, idx) => (
+                {companies.map((company, idx) => (
                     <li key={idx}>
                         <CompanyCard
-                            slug={user.name}
-                            name={user.name}
+                            slug={company.name}
+                            name={company.name}
                         />
                     </li>
                 ))}
