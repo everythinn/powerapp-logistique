@@ -30,9 +30,9 @@ export default function AdminBoard(){
                 <div className={style.sideBar}>
                     <img src={Image.src}></img>
                     {context.lang === "FR" ? (
-                        <button>Extraction Excel</button>
+                        <button className={style.excel}>Extraction Excel</button>
                     ) : (
-                        <button>Excel extraction</button>
+                        <button className={style.excel}>Excel extraction</button>
                     )}
                 </div>
             </main>

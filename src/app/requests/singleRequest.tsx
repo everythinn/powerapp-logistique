@@ -41,7 +41,7 @@ export default function SingleRequest({
                         <p>Société émettrice : {issuingCompany}</p>
                         <p>Société destinataire : {receivingCompany}</p>
                     </div>
-                    <Link href={`/requests/${slug}`} className={style.link}>More details</Link>
+                    <Link href={`/requests/${slug}`} className={style.link}>Détails</Link>
                 </>
             ) : (
                 <>
@@ -55,6 +55,7 @@ export default function SingleRequest({
                         <p>Issuing company : {issuingCompany}</p>
                         <p>Receiving company : {receivingCompany}</p>
                     </div>
+                    <Link href={`/requests/${slug}`} className={style.link}>Details</Link>
                 </>
             )}
         </main>

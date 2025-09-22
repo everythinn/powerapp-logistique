@@ -32,12 +32,12 @@ export default function AdminHeader() {
       {lang === "FR" ? (
         <>
           <Link href='/' className={style.title}>LOGISTIQUE</Link>
-          <Link href='./admin'>Bienvenue utilisateur</Link> {/*to be removed later, only for navigation in testing*/}
+          <Link href='/admin'>Bienvenue utilisateur</Link> {/*to be removed later, only for navigation in testing*/}
         </>
       ) : (
         <>
           <Link href='/' className={style.title}>LOGISTIC</Link>
-          <Link href='./admin'>Welcome username</Link>  {/*to be removed later, only for navigation in testing*/}
+          <Link href='/admin'>Welcome username</Link>  {/*to be removed later, only for navigation in testing*/}
         </>
       )}
     </div>

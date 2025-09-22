@@ -13,30 +13,30 @@ export default function Homepage() {
         <>
           <div className={style.navCubes}>
             <div className={style.navTop}>
-              <Link href='./requests' className={style.link}>Mes demandes</Link>
-              <p className={style.link}>Mes assignations</p>
+              <Link href='./requests' className={style.navLink}>Mes demandes</Link>
+              <p className={style.navLink}>Mes assignations</p>
             </div>
-            <p className={style.link}>Toutes les demandes</p>
+            <p className={style.navLink}>Toutes les demandes</p>
           </div>
           <div className={style.sideBar}>
-            <button>Nouvelle demande</button>
+            <Link href='./add/request' className={style.sideLink}>Nouvelle demande</Link>
             <img src={Image.src}></img>
-            <button>Extraction Excel</button>
+            <button className={style.sideLink}>Extraction Excel </button>
           </div>
         </>
       ) : (
         <>
           <div className={style.navCubes}>
             <div className={style.navTop}>
-              <Link href='./requests' className={style.link}>My requests</Link>
-              <p className={style.link}>My assignments</p>
+              <Link href='./requests' className={style.navLink}>My requests</Link>
+              <p className={style.navLink}>My assignments</p>
             </div>
-            <p className={style.link}>All requests</p>
+            <p className={style.navLink}>All requests</p>
           </div>
           <div className={style.sideBar}>
-            <button>New request</button>
+            <Link href='./add/request' className={style.sideLink}>New request</Link>
             <img src={Image.src}></img>
-            <button>Excel extraction</button>
+            <button className={style.sideLink}>Excel extraction</button>
           </div>
         </>
       )}

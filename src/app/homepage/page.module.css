@@ -24,7 +24,7 @@
     min-height: 200px;
 }
 
-.link {
+.navLink {
     display: flex;
     background-color: #b7acc9;
     color: black;
@@ -38,7 +38,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.link:hover {
+.navLink:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
@@ -53,8 +53,9 @@
     min-width: 250px;
 }
 
-.sideBar button {
+.sideLink {
     background-color: #6a2ca3;
+    text-align: center;
     color: white;
     font-size: 1rem;
     font-weight: 500;
@@ -69,7 +70,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.sideBar button:hover {
+.sideLink:hover {
     background-color: #572183;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
