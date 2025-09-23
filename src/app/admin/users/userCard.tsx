@@ -1,3 +1,4 @@
+import { useTranslation } from '@/app/hooks/useTranslation';
 import Link from 'next/link';
 import style from './userCard.module.css';
 
@@ -8,6 +9,7 @@ interface UserCardProps {
 }
 
 export default function userCard({ slug, name, email }: UserCardProps){
+    const t = useTranslation("editpage")
 
     return (
         <main className={style.card}>
@@ -15,7 +17,7 @@ export default function userCard({ slug, name, email }: UserCardProps){
                 <h2>{name}</h2>
                 <p>{email}</p>
             </div>
-            <Link href={`/admin/users/${slug}`} className={style.link}>Edit</Link>
+            <Link href={`/admin/users/${slug}`} className={style.link}>{t.edit}</Link>
         </main>
     )
 }

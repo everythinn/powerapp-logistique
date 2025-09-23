@@ -2,7 +2,7 @@ import * as XLSX from "xlsx";
 import { saveAs } from 'file-saver';
 
 
-export const exportToExcel = (data: unknown[], fileName: string) => {
+const exportToExcel = (data: unknown[], fileName: string) => {
   // Créer une feuille de calcul à partir des données
   const worksheet = XLSX.utils.json_to_sheet(data);
   const workbook = XLSX.utils.book_new();
@@ -14,4 +14,12 @@ export const exportToExcel = (data: unknown[], fileName: string) => {
   // Télécharger le fichier
   const blob = new Blob([excelBuffer], { type: "application/octet-stream" });
   saveAs(blob, `${fileName}.xlsx`);
+};
+
+export const handleExport = () => {
+  const data = [
+    { Nom: "Jean", Âge: 30, Ville: "Paris" },
+    { Nom: "Marie", Âge: 25, Ville: "Lyon" }
+  ];
+  exportToExcel(data, "MonFichierExcel");
 };

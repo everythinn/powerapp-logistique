@@ -1,12 +1,12 @@
 'use client';
-import { useLang } from '@/app/context/langContext';
+import { useTranslation } from '@/app/hooks/useTranslation';
 import Link from 'next/link';
+import AdminHeader from '@/app/adminHeader/adminHeader';
 import UserCard from './userCard';
 import style from './page.module.css';
-import AdminHeader from '@/app/adminHeader/adminHeader';
 
 export default function UserList(){
-    const context = useLang();
+    const t = useTranslation("editpage");
 
     const users = [
         {
@@ -113,15 +113,9 @@ export default function UserList(){
     return (
         <>
             <AdminHeader />
-            {context.lang === 'FR' ? (
-                <div className={style.triggerContainer}>
-                    <Link href='../add/user' className={style.link}>Ajouter un nouvel utilisateur</Link>
-                </div>
-            ) : (
-                <div className={style.triggerContainer}>
-                    <Link href='../add/user' className={style.link}>Add a new user</Link>
-                </div>
-            )}
+            <div className={style.triggerContainer}>
+                <Link href='../add/user' className={style.link}>{t.addUser}</Link>
+            </div>
             <ul className={style.requests}>
                 {users.map((user, idx) => (
                     <li key={idx}>

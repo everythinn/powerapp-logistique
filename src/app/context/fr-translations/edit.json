@@ -1,0 +1,10 @@
+{
+    "edit": "Modifier",
+    "newName": "Nouveau nom",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+
+    "editCompany": "Modifier le nom de société",
+    "editIssueCode": "Modifier le type de litige",
+    "addUser": "Ajouter un nouvel utilisateur"
+}

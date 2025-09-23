@@ -1,0 +1,37 @@
+{
+
+    "addCompany": "Add company",
+    "enterCompany": "Enter new company name",
+
+    "addIssueCode": "Add issue code",
+    "enterIssueCode": "Enter new issue code",
+
+    "creator": "Creator",
+    "manager": "Manager",
+    "receptionDate": "Reception checking date",
+    "transport": "Ref transportation #",
+    "issuingCompany": "Issuing company",
+    "invoice": "Invoice number",
+    "issueCode": "Issue code",
+    "partNumber": "Part number",
+    "unitPrice": "Unit price",
+    "totalPrice": "Total price",
+    "quantity": "Quantity",
+    "currency": "Currency",
+    "comment": "Comment",
+    "submitRequest": "Send request",
+
+    "nameSurname": "First name SURNAME",
+    "email": "Email",
+    "company": "Company",
+    "isIssuer": "Issuer",
+    "isManager": "Manager",
+    "isOrderingParty" : "Ordering party",
+    "isAccounting": "Accounting",
+    "isAdmin": "Administrator",
+    "submitUser": "Create user",
+
+    "name": "Name",
+    "cancel": "Cancel",
+    "save": "Save"
+}

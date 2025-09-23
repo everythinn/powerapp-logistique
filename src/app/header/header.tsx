@@ -1,10 +1,12 @@
 'use client';
-import Link from "next/link";
 import { useLang } from "../context/langContext";
+import { useTranslation } from "../hooks/useTranslation";
+import Link from "next/link";
 import style from "./header.module.css";
 
 export default function AdminHeader() {
   const {lang, setToEn, setToFr} = useLang();
+  const t = useTranslation("header");
 
 
   function changeLang(){
@@ -29,17 +31,8 @@ export default function AdminHeader() {
           EN
         </button>
       </div>
-      {lang === "FR" ? (
-        <>
-          <Link href='/' className={style.title}>LOGISTIQUE</Link>
-          <Link href='/admin'>Bienvenue utilisateur</Link> {/*to be removed later, only for navigation in testing*/}
-        </>
-      ) : (
-        <>
-          <Link href='/' className={style.title}>LOGISTIC</Link>
-          <Link href='/admin'>Welcome username</Link>  {/*to be removed later, only for navigation in testing*/}
-        </>
-      )}
+      <Link href='/' className={style.title}>{t.title}</Link>
+      <Link href='/admin'>{t.welcomeMessage}</Link> {/*to be removed later, only for navigation in testing*/}
     </div>
   );
 }
