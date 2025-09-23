@@ -1,0 +1,32 @@
+.request {
+    background-color: #AFA9C3;
+    color: black;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.number {
+    font-size: 2rem;
+    font-style: bold;
+}
+
+.number,
+.assignInfo,
+.extraInfo {
+    margin: 15px;
+}
+
+.step {
+    color: white;
+}
+
+.link {
+    background-color: #6a2ca3;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}

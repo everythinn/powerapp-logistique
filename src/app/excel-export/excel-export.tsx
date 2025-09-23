@@ -1,0 +1,23 @@
+import * as XLSX from "xlsx";
+import { saveAs } from 'file-saver';
+import { requests } from "../requests/page";
+
+
+const exportToExcel = (data: unknown[], fileName: string) => {
+  // Créer une feuille de calcul à partir des données
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+  // Générer un fichier Excel
+  const excelBuffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+
+  // Télécharger le fichier
+  const blob = new Blob([excelBuffer], { type: "application/octet-stream" });
+  saveAs(blob, `${fileName}.xlsx`);
+};
+
+export const handleExport = () => {
+  const data = requests;
+  exportToExcel(data, "MonFichierExcel");
+};

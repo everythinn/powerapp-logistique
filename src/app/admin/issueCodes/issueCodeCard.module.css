@@ -1,0 +1,27 @@
+.card {
+    color: black;
+    background-color: #AFA9C3;
+    border-radius: 5px;
+    margin: 20px 50px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info h2 {
+    font-weight: bold;
+}
+
+.info p {
+    font-style: italic;
+}
+
+.link {
+    color: white;
+    background-color: #54429E;
+    border-radius: 5px;
+    padding: 10px
+}
