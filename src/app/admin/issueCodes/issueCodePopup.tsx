@@ -23,7 +23,7 @@ export default function CompanyPopup({ slug, code }: IssueCodesPopupProps) {
     <>
       <Popup
       ref={popupRef}
-      trigger={<button className={style.button}>Modifier</button>}
+      trigger={<button className={style.button}>{t.edit}</button>}
       modal
       closeOnDocumentClick
       >
