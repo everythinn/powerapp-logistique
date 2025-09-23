@@ -10,6 +10,7 @@ export default function Homepage() {
   const context = useLang();
 
   const handleExport = () => {
+{/*TO DO : replace with getData query when db is connected*/}
     const data = [
       { Nom: "Jean", Âge: 30, Ville: "Paris" },
       { Nom: "Marie", Âge: 25, Ville: "Lyon" },
