@@ -43,6 +43,15 @@
     white-space: nowrap;
     cursor: pointer;
   }
+
+  .back {
+    background-color: #AFA9C3;
+    color: black;
+    font-weight: bold;
+    margin-left: 20px;
+    border-radius: 5px;
+    padding: 5px;
+  }
   
   .header p {
     margin: 0;

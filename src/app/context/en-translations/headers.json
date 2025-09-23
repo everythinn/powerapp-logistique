@@ -1,5 +1,7 @@
 {
     "title": "LOGISTIC",
     "titleAdmin": "LOGISTIC - ADMINISTRATION",
-    "welcomeMessage": "Welcome user"
+    "welcomeMessage": "Welcome user",
+    "welcomeAdmin": "Welcome administrator",
+    "back": "Back"
 }

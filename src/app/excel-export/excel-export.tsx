@@ -1,5 +1,6 @@
 import * as XLSX from "xlsx";
 import { saveAs } from 'file-saver';
+import { requests } from "../requests/page";
 
 
 const exportToExcel = (data: unknown[], fileName: string) => {
@@ -17,9 +18,6 @@ const exportToExcel = (data: unknown[], fileName: string) => {
 };
 
 export const handleExport = () => {
-  const data = [
-    { Nom: "Jean", Âge: 30, Ville: "Paris" },
-    { Nom: "Marie", Âge: 25, Ville: "Lyon" }
-  ];
+  const data = requests;
   exportToExcel(data, "MonFichierExcel");
 };

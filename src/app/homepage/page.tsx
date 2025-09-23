@@ -15,14 +15,12 @@ export default function Homepage() {
           <Link href="./requests" className={style.navLink}>
             {t.requests}
           </Link>
-          <p className={style.navLink}>{t.assignments}</p>
+          <Link href="./assignments" className={style.navLink}>{t.assignments}</Link>
         </div>
-        <p className={style.navLink}>{t.allRequests}</p>
+        <Link href="./requests/all" className={style.navLink}>{t.allRequests}</Link>
       </div>
       <div className={style.sideBar}>
-        <Link href="./add/request" className={style.sideLink}>
-          {t.newRequest}
-        </Link>
+        <Link href="./add/request" className={style.sideLink}>{t.newRequest}</Link>
         <img src={Image.src} alt="Boat" />
         <button className={style.sideLink} onClick={handleExport}>
           {t.excel}
