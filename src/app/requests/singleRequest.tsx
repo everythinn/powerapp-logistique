@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useLang } from '../context/langContext';
+import { useTranslation } from '../hooks/useTranslation';
 import style from './singleRequest.module.css';
 
 type SingleRequestProps = {
@@ -24,40 +24,22 @@ export default function SingleRequest({
     issuingCompany,
     receivingCompany
 }: SingleRequestProps) {
-    const context = useLang();
+    const t = useTranslation("addpage");
 
     return (
         <main className={style.request}>
             <h2 className={style.number}>{number}</h2>
-            {context.lang === "FR" ? (
-                <>
-                    <div className={style.assignInfo}>
-                        <p>{creator}</p>
-                        <p>Gestionnaire : {manager}</p>
-                        <p>Assigné à {assignedTo}</p>
-                    </div>
-                    <div className={style.extraInfo}>
-                        <p className={style.step}>Etape {step}</p>
-                        <p>Société émettrice : {issuingCompany}</p>
-                        <p>Société destinataire : {receivingCompany}</p>
-                    </div>
-                    <Link href={`/requests/${slug}`} className={style.link}>Détails</Link>
-                </>
-            ) : (
-                <>
-                    <div className={style.assignInfo}>
-                        <p>{creator}</p>
-                        <p>Manager : {manager}</p>
-                        <p>Assigned to {assignedTo}</p>
-                    </div>
-                    <div className={style.extraInfo}>
-                        <p className={style.step}>Step {step}</p>
-                        <p>Issuing company : {issuingCompany}</p>
-                        <p>Receiving company : {receivingCompany}</p>
-                    </div>
-                    <Link href={`/requests/${slug}`} className={style.link}>Details</Link>
-                </>
-            )}
+            <div className={style.assignInfo}>
+                <p>{creator}</p>
+                <p>{t.manager} : {manager}</p>
+                <p>{t.assignedTo} {assignedTo}</p>
+            </div>
+            <div className={style.extraInfo}>
+                <p className={style.step}>{t.step} {step}</p>
+                <p>{t.issuingCompany} : {issuingCompany}</p>
+                <p>{t.receivingCompany} : {receivingCompany}</p>
+            </div>
+            <Link href={`/requests/${slug}`} className={style.link}>Détails</Link>
         </main>
     )
 }
