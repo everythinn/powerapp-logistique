@@ -39,7 +39,7 @@ export default function SingleRequest({
                 <p>{t.issuingCompany} : {issuingCompany}</p>
                 <p>{t.receivingCompany} : {receivingCompany}</p>
             </div>
-            <Link href={`/requests/${slug}`} className={style.link}>Détails</Link>
+            <Link href={`/requests/${slug}`} className={style.link}>{t.details}</Link>
         </main>
     )
 }

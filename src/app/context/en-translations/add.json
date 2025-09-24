@@ -24,6 +24,7 @@
     "quantity": "Quantity",
     "currency": "Currency",
     "comment": "Comment",
+    "details": "Details",
     "submitRequest": "Send request",
 
     "nameSurname": "First name SURNAME",
