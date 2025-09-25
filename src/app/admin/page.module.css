@@ -20,7 +20,7 @@
     box-sizing: border-box;
   }
   
-  .navCubes p {
+  .link {
     background-color: #b7acc9;
     color: black;
     font-weight: 500;
@@ -39,7 +39,7 @@
   
   
   
-  .navCubes p:hover {
+  .link:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   }
@@ -54,7 +54,7 @@
   }
   
   .sideBar img,
-  .sideBar button {
+  .excel {
     width: 100%;
     max-width: 300px;
     border-radius: 8px;
@@ -66,7 +66,7 @@
     flex: 1;
   }
   
-  .sideBar button {
+  .excel {
     background-color: #6a2ca3;
     color: white;
     font-size: 1rem;
@@ -74,12 +74,15 @@
     border: none;
     border-radius: 8px;
     padding: 1rem;
-    cursor: pointer;
     transition: background 0.2s ease;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
-  .sideBar button:hover {
+  .excel:hover {
     background-color: #572183;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   }
   
   @media (max-width: 900px) {
@@ -104,4 +107,12 @@
       justify-content: center;
     }
   }
-  
+
+
+  .container {
+    color: black;
+  }
+
+  .button {
+    background-color: #6a2ca3;
+  }

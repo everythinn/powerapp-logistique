@@ -1,0 +1,43 @@
+{
+
+    "addCompany": "Ajouter une société",
+    "enterCompany": "Entrez le nom de la nouvelle société",
+
+    "addIssueCode": "Ajouter un type de litige",
+    "enterIssueCode": "Entrez le nouveau type de litige",
+
+    "creator": "Créateur",
+    "manager": "Gestionnaire",
+    "orderingParty": "Donneur d'ordre", 
+    "assignedTo": "Assigné à",
+    "step": "Etape",
+    "receptionDate": "Date du contrôle de réception",
+    "arrivalDate": "Date d'arrivée à cette étape",
+    "transport": "Ref transport #",
+    "issuingCompany": "Société émettrice",
+    "receivingCompany": "Société destinataire",
+    "invoice": "Numéro facture",
+    "issueCode": "Type de litige",
+    "partNumber": "Référence",
+    "unitPrice": "Prix UN",
+    "totalPrice": "Coût du litige",
+    "quantity": "Quantité",
+    "currency": "Devise",
+    "comment": "Commentaire",
+    "details": "Détails",
+    "submitRequest": "Envoyer demande",
+
+    "nameSurname": "Prénom NOM",
+    "email": "Email",
+    "company": "Société",
+    "isIssuer": "Emetteur",
+    "isManager": "Gestionnaire",
+    "isOrderingParty" : "Donneur d'ordres",
+    "isAccounting": "Comptabilité",
+    "isAdmin": "Administrateur",
+    "submitUser": "Créer utilisateur",
+
+    "name": "Nom",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+}

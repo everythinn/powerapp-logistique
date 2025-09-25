@@ -1,0 +1,10 @@
+.userform {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 1rem;
+  color: black;
+}
