@@ -20,9 +20,10 @@ export default function AllRequests(){
                             step={request.step}
                             issuingCompany={request.issuingCompany}
                             receivingCompany={request.receivingCompany}
-                        />
+                            />
                     </li>
-                ))}
+                ), fetch("/api/assignments")
+            )}
             </ul>
         </>
     )

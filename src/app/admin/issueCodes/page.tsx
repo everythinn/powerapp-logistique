@@ -1,42 +1,55 @@
 'use client';
-import { useLang } from '@/app/context/langContext';
-import IssueCodeCard from './issueCodeCard';
-import AdminHeader from '@/app/adminHeader/adminHeader';
-import style from './page.module.css';
-import AddIssueCodePopup from '@/app/add/issueCode/addIssueCodePopup';
+import { useEffect, useState } from "react";
+import { useLang } from "@/app/context/langContext";
+import AdminHeader from "@/app/adminHeader/adminHeader";
+import IssueCodeCard from "./issueCodeCard";
+import AddIssueCodePopup from "@/app/add/issueCode/addIssueCodePopup";
+import style from "./page.module.css";
 
-export default function IssueCodeList(){
-    const context = useLang();
+interface LitigeInfo {
+    id: bigint;
+    nom: string;
+}
 
-    const codes = [
-        {
-            slug: 'INR',
-            code: 'INR - part invoiced but not received'
-        },
-        {
-            slug: 'DNI',
-            code: 'DNI - part delivered but not invoiced'
-        },
-        {
-            slug: 'BR',
-            code: 'BR - broken during transportation'
+export default function IssueCodeList() {
+  const context = useLang();
+  const [codes, setCodes] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch("/api/admin/issueCodes")
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setCodes(data);
+        } else if (Array.isArray(data?.data)) {
+          setCodes(data.data);
+        } else {
+          console.error("Unexpected API response:", data);
+          setCodes([]);
         }
-    ]
-    
-    return (
-        <>
-            <AdminHeader />
-            <AddIssueCodePopup />
+      })
+      .catch((err) => {
+        console.error("Failed to fetch issue codes:", err);
+        setCodes([]);
+      });
+  }, []);
+  
+
+  return (
+    <>
+        <AdminHeader />
+        <AddIssueCodePopup />
+        {codes.length === 0 ? (
+            <p className={style.error}>No issue codes found or failed to load.</p>
+        ) : (
             <ul className={style.codes}>
-                {codes.map((code, idx) => (
-                    <li key={idx}>
-                        <IssueCodeCard
-                            slug={code.slug}
-                            code={code.code}
-                        />
-                    </li>
-                ))}
+            {codes.map((code, idx) => (
+                <li key={idx}>
+                <IssueCodeCard slug={code.slug} code={code.code} />
+                </li>
+            ))}
             </ul>
-        </>
-    )
+        )}
+    </>
+  );
 }

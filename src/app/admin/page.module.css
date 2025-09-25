@@ -107,4 +107,12 @@
       justify-content: center;
     }
   }
-  
+
+
+  .container {
+    color: black;
+  }
+
+  .button {
+    background-color: #6a2ca3;
+  }
